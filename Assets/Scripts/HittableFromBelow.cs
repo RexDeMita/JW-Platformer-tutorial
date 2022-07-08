@@ -28,7 +28,12 @@ public class HittableFromBelow : MonoBehaviour
             {
                 GetComponent<SpriteRenderer>().sprite = _usedSprite; 
             }
+            
+            
         }
+            
+
+        
     }
     //this is a method that children will override so the protected keyword is used for children accessibility
     //the virtual keyword allows for the override

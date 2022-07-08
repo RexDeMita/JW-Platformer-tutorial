@@ -15,32 +15,45 @@ public class ItemBox : HittableFromBelow
         if(_item != null)
             _item.SetActive(false);
     }
-    
-    //this property will override CanUse in the base class
-    //if the item was used, CanUse will become true
-    protected override bool CanUse => _used == false && _item != null;  
-    
-    //this method will override the Use method in the base class
-    protected override void Use()
+
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        //backup check in case the CanUse check fails
-        if (_item == null)
+        //if the item was used already, return
+        if (_used)
+            return;
+
+        var player = collision.collider.GetComponent<Player>(); 
+        if(player == null)
             return;
         
-        //a boolean to check if the item was used
-        _used = true; 
-        
-        //activate the item
-        _item.SetActive(true);
-        
-        //get the reference to the rigidbody
-        var itemRigidbody = _item.GetComponent<Rigidbody2D>();
-        
-        //if the itemRigidbody exists
-        if (itemRigidbody != null)
+        //if the collision is from the bottom going in the up direction and remaining coins is greater than 0
+        //remaining coins will be decremented
+        //, CoinsCollected will be incremented
+        if (collision.contacts[0].normal.y > 0)
         {
-            //set the launch velocity
-            itemRigidbody.velocity = _itemLaunchVelocity; 
+            //this gets a reference to the sprite renderer component and sets it to a sprite of your choosing
+            GetComponent<SpriteRenderer>().sprite = _usedSprite;
+            
+            //this activates the item if it exists
+            if (_item != null)
+            {
+                //a boolean to check if the item was used
+                _used = true; 
+                _item.SetActive(true);
+                //get the reference to the rigidbody
+                var itemRigidbody = _item.GetComponent<Rigidbody2D>();
+                //if the itemRigidbody exists
+                if (itemRigidbody != null)
+                {
+                    //set the launch velocity
+                    itemRigidbody.velocity = _itemLaunchVelocity; 
+                }
+            }
+                
         }
+             
+            
+
+        
     }
 }
