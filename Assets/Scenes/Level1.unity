@@ -7039,7 +7039,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 3.9999104
+  orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -7062,7 +7062,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_LocalRotation: {x: 0.0074770465, y: 0.0027053559, z: -0.000020228712, w: 0.9999684}
+  m_LocalRotation: {x: -6e-45, y: 1.1e-44, z: 0, w: 1}
   m_LocalPosition: {x: -0.31410998, y: 0.2195566, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -10393,7 +10393,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1224663247}
-  m_LocalRotation: {x: 0.0074770465, y: 0.0027053559, z: -0.000020228712, w: 0.9999684}
+  m_LocalRotation: {x: -6e-45, y: 1.1e-44, z: 0, w: 1}
   m_LocalPosition: {x: -0.31410998, y: 0.2195566, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -23068,7 +23068,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_BindingMode: 1
   m_FollowOffset: {x: 0, y: 0, z: -10}
-  m_XDamping: 1
+  m_XDamping: 0
   m_YDamping: 1
   m_ZDamping: 1
   m_AngularDampingMode: 0
