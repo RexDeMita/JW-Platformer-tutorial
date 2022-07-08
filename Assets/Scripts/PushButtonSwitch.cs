@@ -56,9 +56,13 @@ public class PushButtonSwitch : MonoBehaviour
 
     void BecomeReleased()
     {
-        _spriteRenderer.sprite = _upSprite;
-
-        _onReleased?.Invoke();
+        //if the unity event, onReleased has events registered, the code will run        
+        if (_onReleased.GetPersistentEventCount() != 0)
+        {
+             _spriteRenderer.sprite = _upSprite;
+             _onReleased.Invoke();
+        }
+       
     }
 }
 //make sure to assign the object or objects that the unity event affects in the inspector
