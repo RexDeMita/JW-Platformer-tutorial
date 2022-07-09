@@ -11,7 +11,13 @@ namespace Lesson_notes
             
             something too simple would also not make a good prefab
             
+            any change in a component of a prefab instance will be denoted with a minus symbol
             
+            to apply changes made in one prefab instance to all instances
+                go to the overrides window of the parent prefab
+                you will see the change you made
+                apply all 
+                  
          */
     }
 }
