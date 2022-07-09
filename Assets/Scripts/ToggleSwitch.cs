@@ -95,5 +95,24 @@ public class ToggleSwitch : MonoBehaviour
          default:
             break;
       }
-    }
+   }
+   //this changes the sprite in the scene when i change the starting direction in the inspector
+   void OnValidate()
+   {
+      _spriteRenderer = GetComponent<SpriteRenderer>();
+      switch (_startingDirection)
+      {
+         case ToggleDirection.Left:
+            _spriteRenderer.sprite = _toggleSwitchLeft;
+            break;
+         case ToggleDirection.Center:
+            _spriteRenderer.sprite = _toggleSwitchCenter;
+            break;
+         case ToggleDirection.Right:
+            _spriteRenderer.sprite = _toggleSwitchRight;
+            break;
+         default:
+            break;
+      }
+   }
 }
