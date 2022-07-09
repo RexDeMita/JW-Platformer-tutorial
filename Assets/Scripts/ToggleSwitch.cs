@@ -6,14 +6,24 @@ using UnityEngine.Events;
 
 public class ToggleSwitch : MonoBehaviour
 {
-   [SerializeField] UnityEvent _onRight;
    [SerializeField] UnityEvent _onLeft; 
+   [SerializeField] UnityEvent _onCenter;
+   [SerializeField] UnityEvent _onRight;
    [SerializeField] Sprite _toggleSwitchLeft;
-   [SerializeField] Sprite _toggleSwitchMid;
+   [SerializeField] Sprite _toggleSwitchCenter;
    [SerializeField] Sprite _toggleSwitchRight;
-
+   
    SpriteRenderer _spriteRenderer;
-
+   ToggleDirection _currentDirection;
+   
+   //enum
+   enum ToggleDirection
+   {
+      Left, 
+      Center, 
+      Right
+   }
+   
    void Start()
    {
       _spriteRenderer = GetComponent<SpriteRenderer>();
@@ -45,19 +55,37 @@ public class ToggleSwitch : MonoBehaviour
       //if the player is on the left and walking left, use the left switch
       if (wasOnRight && playerWalkingRight)
       {
-         SetPosition();
+         SetToggleDirection(ToggleDirection.Right);
       }
       else if (wasOnRight == false && playerWalkingLeft)
       {
-         _spriteRenderer.sprite = _toggleSwitchLeft;
-         _onLeft.Invoke();
+         SetToggleDirection(ToggleDirection.Left);
       }
           
    }
-
-   void SetPosition()
+   //sets the sprite and activates the object based on the toggle direction
+   void SetToggleDirection(ToggleDirection direction)
    {
-      _spriteRenderer.sprite = _toggleSwitchRight;
-      _onRight.Invoke();
-   }
+      if(_currentDirection == direction)
+         return;
+      
+      _currentDirection = direction; 
+      switch (direction)
+      {
+         case ToggleDirection.Left:
+            _spriteRenderer.sprite = _toggleSwitchLeft;
+            _onLeft.Invoke();
+            break;
+         case ToggleDirection.Center:
+            _spriteRenderer.sprite = _toggleSwitchCenter;
+            _onCenter.Invoke();
+            break;
+         case ToggleDirection.Right:
+            _spriteRenderer.sprite = _toggleSwitchRight;
+            _onRight.Invoke();
+            break;
+         default:
+            break;
+      }
+    }
 }
