@@ -17,7 +17,19 @@ namespace Lesson_notes
                 go to the overrides window of the parent prefab
                 you will see the change you made
                 apply all 
-                  
+            
+            nested: making objects nested under a prefab its own prefab helps to allow for editing of the nested prefab 
+                if i place a nested prefab into the scene and then edit the prefab, the unique nested prefab and 
+                the original nested prefab are both edited
+                
+            unpacking
+                removes the object as a prefab
+                unpack completely
+                    removes the object and all children as prefabs
+                    
+            
+                
+            
          */
     }
 }
