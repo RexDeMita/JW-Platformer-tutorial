@@ -6,6 +6,8 @@ using UnityEngine.Events;
 
 public class ToggleSwitch : MonoBehaviour
 {
+   [SerializeField] ToggleDirection _startingDirection = ToggleDirection.Center;
+   
    [SerializeField] UnityEvent _onLeft; 
    [SerializeField] UnityEvent _onCenter;
    [SerializeField] UnityEvent _onRight;
@@ -27,6 +29,9 @@ public class ToggleSwitch : MonoBehaviour
    void Start()
    {
       _spriteRenderer = GetComponent<SpriteRenderer>();
+      //sets the toggle switch to a default sprite
+      //must be done after the sprite renderer
+      SetToggleDirection(_startingDirection, true);
    }
    
    //runs every frame a collider is inside of this collider
@@ -63,10 +68,13 @@ public class ToggleSwitch : MonoBehaviour
       }
           
    }
-   //sets the sprite and activates the object based on the toggle direction
-   void SetToggleDirection(ToggleDirection direction)
+   
+   //sets the sprite and invokes the event
+   //based on direction and a boolean that tells this method whether or not to return
+   //the boolean is an optional parameter: a default value that is given as input to any method that doesnt state otherwise
+   void SetToggleDirection(ToggleDirection direction, bool force = false)
    {
-      if(_currentDirection == direction)
+      if(force == false && _currentDirection == direction)
          return;
       
       _currentDirection = direction; 
