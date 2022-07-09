@@ -6,6 +6,8 @@ using UnityEngine.Events;
 
 public class ToggleSwitch : MonoBehaviour
 {
+   [SerializeField] UnityEvent _onRight;
+   [SerializeField] UnityEvent _onLeft; 
    [SerializeField] Sprite _toggleSwitchLeft;
    [SerializeField] Sprite _toggleSwitchMid;
    [SerializeField] Sprite _toggleSwitchRight;
@@ -42,8 +44,20 @@ public class ToggleSwitch : MonoBehaviour
       //if the player is on the right and they are walking right, use the right switch
       //if the player is on the left and walking left, use the left switch
       if (wasOnRight && playerWalkingRight)
-         _spriteRenderer.sprite = _toggleSwitchRight; 
+      {
+         SetPosition();
+      }
       else if (wasOnRight == false && playerWalkingLeft)
-         _spriteRenderer.sprite = _toggleSwitchLeft; 
-   } 
+      {
+         _spriteRenderer.sprite = _toggleSwitchLeft;
+         _onLeft.Invoke();
+      }
+          
+   }
+
+   void SetPosition()
+   {
+      _spriteRenderer.sprite = _toggleSwitchRight;
+      _onRight.Invoke();
+   }
 }
