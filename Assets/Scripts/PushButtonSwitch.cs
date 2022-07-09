@@ -62,7 +62,6 @@ public class PushButtonSwitch : MonoBehaviour
              _spriteRenderer.sprite = _upSprite;
              _onReleased.Invoke();
         }
-       
     }
 }
 //make sure to assign the object or objects that the unity event affects in the inspector

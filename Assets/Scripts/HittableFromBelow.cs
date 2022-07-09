@@ -18,7 +18,6 @@ public class HittableFromBelow : MonoBehaviour
     }
     protected virtual void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("collision");
         //if the sprite is not usable, return. 
         if (CanUse == false)
             return;
@@ -30,7 +29,6 @@ public class HittableFromBelow : MonoBehaviour
         //if the collision is from the bottom going in the up direction and remaining coins is greater than 0
         if (collision.contacts[0].normal.y > 0)
         {
-            Debug.Log("Collision successful");
             //method to play animation
             PlayAnimation(); 
             
