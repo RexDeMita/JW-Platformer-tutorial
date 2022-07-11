@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class Coin : MonoBehaviour
 {
@@ -26,5 +27,7 @@ public class Coin : MonoBehaviour
         
         //print the value of coinscollected to the log
         Debug.Log(CoinsCollected);
+        
+        ScoreSystem.Add(100);
     }
 }
