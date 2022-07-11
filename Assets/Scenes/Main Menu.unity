@@ -219,6 +219,7 @@ GameObject:
   - component: {fileID: 41844580}
   - component: {fileID: 41844579}
   - component: {fileID: 41844582}
+  - component: {fileID: 41844583}
   m_Layer: 5
   m_Name: Level 1 Button
   m_TagString: Untagged
@@ -353,6 +354,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _levelName: Level1
+--- !u!114 &41844583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 41844577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 927969bd66e54711a5789aecc218f62f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &110660138
 GameObject:
   m_ObjectHideFlags: 0
@@ -811,9 +824,9 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 290058952}
   m_Enabled: 1
-  m_Alpha: 0
-  m_Interactable: 0
-  m_BlocksRaycasts: 0
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
 --- !u!114 &290058955
 MonoBehaviour:
@@ -1214,6 +1227,7 @@ GameObject:
   - component: {fileID: 677382563}
   - component: {fileID: 677382562}
   - component: {fileID: 677382561}
+  - component: {fileID: 677382565}
   m_Layer: 5
   m_Name: Outside Button
   m_TagString: Untagged
@@ -1348,6 +1362,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 677382559}
   m_CullTransparentMesh: 1
+--- !u!114 &677382565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 677382559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 927969bd66e54711a5789aecc218f62f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &745092241
 GameObject:
   m_ObjectHideFlags: 0
@@ -2466,6 +2492,7 @@ GameObject:
   - component: {fileID: 2124073200}
   - component: {fileID: 2124073199}
   - component: {fileID: 2124073198}
+  - component: {fileID: 2124073202}
   m_Layer: 5
   m_Name: Level 2 Button
   m_TagString: Untagged
@@ -2600,6 +2627,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2124073196}
   m_CullTransparentMesh: 1
+--- !u!114 &2124073202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2124073196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 927969bd66e54711a5789aecc218f62f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2124983633
 GameObject:
   m_ObjectHideFlags: 0
