@@ -13,6 +13,11 @@ public class L21MainMenuUI : MonoBehaviour
         
     it does not matter what component of the object is dragged and dropped into an event. the object itself is what matters
     
+    Outline component for UI elements
     
+    layout group components for UI elements
+        different ways of auto spacing UI elements within each other
+        
+        
      */
 }
