@@ -31,6 +31,8 @@ public class Flag : MonoBehaviour
     //IEnumerator is necessary
     IEnumerator LoadAfterDelay()
     {
+        //setting the int to 1 in the player prefs that corresponds to the key given
+        PlayerPrefs.SetInt(_sceneName + "Unlocked", 1);
         //this line returns a sec of delay before the scene is loaded
         yield return new WaitForSeconds(1f); 
         

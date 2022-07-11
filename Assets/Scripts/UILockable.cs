@@ -17,4 +17,14 @@ public class UILockable : MonoBehaviour
         if (unlocked == 0) 
             gameObject.SetActive(false);
     }
+    
+    //this is a button in the inspector that i can use to run this method at edit time
+    [ContextMenu("Clear Unlock")]
+    void ClearLevelUnlocked()
+    {
+        var startButton = GetComponent<UIStartLevelButton>();
+        string key = startButton.LevelName + "Unlocked";
+        //this will delete the keys that are given as input
+        PlayerPrefs.DeleteKey(key);
+    }
 }
