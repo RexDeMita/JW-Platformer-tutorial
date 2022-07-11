@@ -11,6 +11,8 @@ public class L21MainMenuUI : MonoBehaviour
     Set native size 
         reproduces the sprite in the native aspect ratio
         
+    it does not matter what component of the object is dragged and dropped into an event. the object itself is what matters
+    
     
      */
 }
