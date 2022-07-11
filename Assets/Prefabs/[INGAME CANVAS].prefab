@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2076104749372951335}
   - component: {fileID: 2076104749372951328}
   m_Layer: 5
-  m_Name: Coins Collected Canvas
+  m_Name: '[INGAME CANVAS]'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
