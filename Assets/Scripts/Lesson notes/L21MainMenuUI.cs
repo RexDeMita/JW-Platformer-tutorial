@@ -22,6 +22,13 @@ public class L21MainMenuUI : MonoBehaviour
     layout group components for UI elements
         different ways of auto spacing UI elements within each other
         
-    
+    use empties to organize and compartmentalize objects that are related
+        the buttons that need organizing should be under an empty with the layout group component
+        other buttons live outside the layout group but are still part of the panel
+        
+    canvas group
+        component of UI elements that gives control over interactivity and visibility without disabling anything
+        
+        
      */
 }
