@@ -24,6 +24,7 @@ public class Player : MonoBehaviour
     [SerializeField] Transform _feet;
     [SerializeField] float  _downPull = 1;
     [SerializeField] float _maxJumpDuration = 0.1f;
+    [SerializeField] float _downForce;
     
     Vector3 _startPosition;
     int _jumpsRemaining;
@@ -38,6 +39,8 @@ public class Player : MonoBehaviour
     string _jumpButton;
     string _horizontalAxis;
     int _layerMask;
+    AudioSource _audioSource;
+    
 
 
     void Start()
@@ -65,7 +68,9 @@ public class Player : MonoBehaviour
         
         //cached value for the layermask
         _layerMask = LayerMask.GetMask("Default");
-
+        
+        //cached value for the audio source
+        _audioSource = GetComponent<AudioSource>();
     }
     void Update()
     {
@@ -112,7 +117,7 @@ public class Player : MonoBehaviour
             _fallTimer += Time.deltaTime; 
             
             //variable that holds the value for downpull
-            var _downForce = _downPull * _fallTimer * _fallTimer; 
+            _downForce = _downPull * _fallTimer * _fallTimer; 
             
             //the player is being pulled down by a downpull that increases every frame
             _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, _rigidbody2D.velocity.y - _downForce);
@@ -153,6 +158,10 @@ public class Player : MonoBehaviour
         _jumpTimer = 0;
 
         _fallTimer = 0;
+         
+        //play this sound if it exists
+        if (_audioSource != null)
+            _audioSource.Play();
     }
 
     bool ShouldStartJump()
