@@ -106,6 +106,11 @@ public class Slime : MonoBehaviour
             
         //the dead Sprite is assigned to the sprite field of the sprite renderer component
             spriteRenderer.sprite = _deadSprite; 
+            
+        //play sound if it exists
+        var audioSource = GetComponent<AudioSource>();
+        if(audioSource != null)
+            audioSource.Play();
         
         //turn the animator off so that the dead Sprite will appear rather than the animated walk sequence
         GetComponent<Animator>().enabled = false; 

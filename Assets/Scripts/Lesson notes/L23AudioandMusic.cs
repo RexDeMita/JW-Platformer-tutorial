@@ -13,7 +13,19 @@ namespace Lesson_notes
         
     context menu Rider: ctrl + .
     
-    
+    mixer
+        from window
+        
+        add a mixer using plus button
+        name the mixer
+        
+        groups
+            this is where we manage the sounds and sources using a slider
+            
+            audio sources have a field for the group
+                click and drag or just click
+        
+        add effect to a group in the inspector when the group is selected
      */
     }
 }
