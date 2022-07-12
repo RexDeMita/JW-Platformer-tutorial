@@ -14,10 +14,14 @@ public class ToggleSwitch : MonoBehaviour
    [SerializeField] Sprite _toggleSwitchLeft;
    [SerializeField] Sprite _toggleSwitchCenter;
    [SerializeField] Sprite _toggleSwitchRight;
+
+   [SerializeField] AudioClip _leftSound;
+   [SerializeField] AudioClip _rightSound;
    
    SpriteRenderer _spriteRenderer;
    ToggleDirection _currentDirection;
-   
+   AudioSource _audioSource;
+
    //enum
    enum ToggleDirection
    {
@@ -28,6 +32,7 @@ public class ToggleSwitch : MonoBehaviour
    
    void Start()
    {
+      _audioSource = GetComponent<AudioSource>();
       _spriteRenderer = GetComponent<SpriteRenderer>();
       //sets the toggle switch to a default sprite
       //must be done after the sprite renderer
@@ -83,6 +88,8 @@ public class ToggleSwitch : MonoBehaviour
          case ToggleDirection.Left:
             _spriteRenderer.sprite = _toggleSwitchLeft;
             _onLeft.Invoke();
+            if(_audioSource != null)
+               _audioSource.PlayOneShot(_leftSound);
             break;
          case ToggleDirection.Center:
             _spriteRenderer.sprite = _toggleSwitchCenter;
@@ -91,6 +98,8 @@ public class ToggleSwitch : MonoBehaviour
          case ToggleDirection.Right:
             _spriteRenderer.sprite = _toggleSwitchRight;
             _onRight.Invoke();
+            if(_audioSource != null)
+               _audioSource.PlayOneShot(_rightSound);
             break;
          default:
             break;

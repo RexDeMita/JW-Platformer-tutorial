@@ -8,7 +8,7 @@ public class Coin : MonoBehaviour
     //the public keyword signifies the ability for other classes to access this class variable
     public static int CoinsCollected;
 
-    [SerializeField] List<AudioClip> _clips; 
+    [SerializeField]  List<AudioClip> _clips; 
 
     void OnTriggerEnter2D(Collider2D collision)
     {

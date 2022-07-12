@@ -11,7 +11,7 @@ namespace Lesson_notes
         you can click on anything and the inspector wont change
         this allows for easier file transfers to an object in the locked inspector
         
-    
+    context menu Rider: ctrl + .
      */
     }
 }

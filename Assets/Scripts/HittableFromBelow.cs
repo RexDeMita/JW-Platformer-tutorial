@@ -7,14 +7,16 @@ public class HittableFromBelow : MonoBehaviour
     //the protected keyword denotes a generally private field but is accessible by the entities that inherit from this class
     [SerializeField] protected Sprite _usedSprite;
     Animator _animator;
-    private static readonly int Use1 = Animator.StringToHash("Use");
+    static readonly int Use1 = Animator.StringToHash("Use");
+    AudioSource _audioSource;
 
     //this property is accessed by a child entity that will determine if the sprite is usable and set this to true
     protected virtual bool CanUse => true;
 
     void Awake()
     {
-        _animator = GetComponent<Animator>(); 
+        _animator = GetComponent<Animator>();
+        _audioSource = GetComponent<AudioSource>(); 
     }
     protected virtual void OnCollisionEnter2D(Collision2D collision)
     {
@@ -29,6 +31,9 @@ public class HittableFromBelow : MonoBehaviour
         //if the collision is from the bottom going in the up direction and remaining coins is greater than 0
         if (collision.contacts[0].normal.y > 0)
         {
+            //method to play audio
+            PlayAudio();
+
             //method to play animation
             PlayAnimation(); 
             
@@ -40,6 +45,12 @@ public class HittableFromBelow : MonoBehaviour
                 GetComponent<SpriteRenderer>().sprite = _usedSprite; 
             }
         }
+    }
+
+    void PlayAudio()
+    {
+        if (_audioSource != null)
+            _audioSource.Play(); 
     }
 
     void PlayAnimation()

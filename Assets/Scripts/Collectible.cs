@@ -11,11 +11,20 @@ public class Collectible : MonoBehaviour
         var player = collision.GetComponent<Player>();
         if (player == null)
             return;
-        //deactivate the game object
-        gameObject.SetActive(false);
-        
+        //deactivate the sprite renderer and collider
+        GetComponent<SpriteRenderer>().enabled = false;
+        GetComponent<Collider2D>().enabled = false;
+
         //this line invokes events
-        OnPickedUp?.Invoke();
+        if (OnPickedUp != null)
+        {
+            OnPickedUp?.Invoke();
+        }
+
+        var audioSource = GetComponent<AudioSource>();
+        if (audioSource != null)
+            audioSource.Play();
+
     }
 
     //the event is invoked each time the trigger on this object is collided with by a player

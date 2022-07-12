@@ -7,7 +7,7 @@ public class CoinBox : HittableFromBelow
 {
     [SerializeField] int _totalCoins = 3;
     int _remainingCoins;
-
+    
     void Start()
     {
         _remainingCoins = _totalCoins;
@@ -26,4 +26,8 @@ public class CoinBox : HittableFromBelow
         _remainingCoins--;
         Coin.CoinsCollected++;
     }
+    
+    //this script does not have an audio source, but the object this is attached to might
+    //HittableFromBelow is the script that is playing the audio source which works because this scripts inherits from HFB
+    
 }
