@@ -1,8 +1,5 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SocialPlatforms.Impl;
 
 public class Coin : MonoBehaviour
 {
@@ -10,6 +7,8 @@ public class Coin : MonoBehaviour
     //static variables are shared across all instances of the class
     //the public keyword signifies the ability for other classes to access this class variable
     public static int CoinsCollected;
+
+    [SerializeField] List<AudioClip> _clips; 
 
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -32,7 +31,23 @@ public class Coin : MonoBehaviour
         GetComponent<Collider2D>().enabled = false;
         GetComponent<SpriteRenderer>().enabled = false; 
         
-        //getting a reference to the audio source and then using it right away to play the sound
-        GetComponent<AudioSource>().Play();
+        //if there is more than 0 clips, play a random clip
+        if (_clips.Count > 0)
+        {
+            
+            //randomize the audio clip from the list above that will be played
+            int randomIndex = UnityEngine.Random.Range(0, _clips.Count); 
+        
+            //assign the clip from the list using the random index
+            AudioClip clip = _clips[randomIndex]; 
+        
+            //getting a reference to the audio source and then using it right away to play the random clip
+            GetComponent<AudioSource>().PlayOneShot(clip);
+        }
+        else
+        {
+            //getting a reference to the audio source and then playing the clip assigned in the component
+            GetComponent<AudioSource>().Play();
+        }
     }
 }

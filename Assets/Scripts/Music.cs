@@ -7,6 +7,7 @@ public class Music : MonoBehaviour
     //read from outside of this class, but only set in this class
     //singleton
     public static Music Instance { get; private set; }
+     
     void Awake()
     {
         //if there is no current Instance, set the current Instance to this object, and dont destory it
