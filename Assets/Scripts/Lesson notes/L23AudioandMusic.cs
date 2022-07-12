@@ -12,6 +12,8 @@ namespace Lesson_notes
         this allows for easier file transfers to an object in the locked inspector
         
     context menu Rider: ctrl + .
+    
+    
      */
     }
 }
