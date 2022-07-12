@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditorInternal;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class Player : MonoBehaviour
@@ -237,6 +238,9 @@ public class Player : MonoBehaviour
     internal void ResetToStart()
     {
         _rigidbody2D.position = _startPosition; 
+        
+        //send the user to the main menu
+        SceneManager.LoadScene("Main Menu"); 
     }
 
     //teleports the rigidbody to a position
