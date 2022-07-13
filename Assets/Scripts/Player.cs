@@ -22,9 +22,12 @@ public class Player : MonoBehaviour
     [SerializeField] int _jumpVelocity = 10;
     [SerializeField] int _maxJumps = 2;
     [SerializeField] Transform _feet;
+    [SerializeField] Transform _leftSensor;
+    [SerializeField] Transform _rightSensor;
     [SerializeField] float  _downPull = 1;
     [SerializeField] float _maxJumpDuration = 0.1f;
     [SerializeField] float _downForce;
+    [SerializeField] float _wallSlideSpeed = 1f;
     
     Vector3 _startPosition;
     int _jumpsRemaining;
@@ -91,6 +94,17 @@ public class Player : MonoBehaviour
 
         UpdateSpriteDirection();
         
+        //check to see if player should slide
+        if (ShouldSlide())
+        {
+            //if you are sliding, return
+            //this keeps the player at a steady downward slide without being affected by anything else
+             Slide();
+             return;
+        }
+           
+            
+        
         //beginning a jump functionality
         //if Fire1 is pressed during this frame and the player has jumps left
         if (ShouldStartJump())
@@ -123,7 +137,45 @@ public class Player : MonoBehaviour
             _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, _rigidbody2D.velocity.y - _downForce);
         }
     }
-    
+
+    void Slide()
+    {
+        _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, -_wallSlideSpeed);
+
+    }
+
+    bool ShouldSlide()
+    {
+        //if player is on the ground, return false
+        if (_isGrounded)
+            return false; 
+        
+        //if player is going to the left
+        if (_horizontal < 0)
+        {
+            //get the reference to the collision with the left sensor
+            var hit = Physics2D.OverlapCircle(_leftSensor.position, 0.1f);
+
+            //if the hit exists and the left sensor hits a wall
+            if (hit != null && hit.CompareTag("Wall"))
+                return true; 
+        }
+        
+        //if player is going to the right
+        if (_horizontal > 0)
+        {
+            //get the reference to the collision with the right sensor
+            var hit = Physics2D.OverlapCircle(_rightSensor.position, 0.1f);
+
+            //if the hit exists and the left sensor hits a wall
+            if (hit != null && hit.CompareTag("Wall"))
+                return true; 
+        }
+        
+        //if we are not going left, return false. 
+        return false;
+    }
+
     //this is a get only property because we dont want any accidental setting of variables
     //the syntax below is a shortened version of the get only property
     public int PlayerNumber => _playerNumber;
@@ -225,6 +277,9 @@ public class Player : MonoBehaviour
         
         //sets the jump to true or false
         _animator.SetBool("Jump", ShouldContinueJump());
+        
+        //sets the slide to true or false
+        _animator.SetBool("Slide", ShouldSlide());
 
     }
 
