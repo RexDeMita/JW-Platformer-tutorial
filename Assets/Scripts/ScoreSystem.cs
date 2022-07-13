@@ -5,8 +5,10 @@ using UnityEngine;
 
 public class ScoreSystem : MonoBehaviour
 {
-   static int _score;
-   private static int _highScore;
+   //this can be read from outside, but only set from inside
+   public static int Score { get; private set; }
+   static int _highScore;
+ 
 
    void Start()
    {
@@ -19,16 +21,16 @@ public class ScoreSystem : MonoBehaviour
    //static will allow other objects to use this method 
     public static void Add(int points)
     {
-        _score += points; 
+        Score += points; 
         //this invokes the event taking the score as input
-        OnScoreChanged?.Invoke(_score);
-        Debug.Log($"Score = {_score}");
+        OnScoreChanged?.Invoke(Score);
+        Debug.Log($"Score = {Score}");
         
         //if score is greater than high score
-        if (_score > _highScore)
+        if (Score > _highScore)
         {
             //set high score to the current score
-            _highScore = _score;
+            _highScore = Score;
             Debug.Log($"High Score = {_highScore}");
             
             //set the integer for the preference based on the given key
