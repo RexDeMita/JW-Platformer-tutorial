@@ -97,13 +97,14 @@ public class Player : MonoBehaviour
         //check to see if player should slide
         if (ShouldSlide())
         {
+            //if the input for a jump is pressed, wall jump
+            if (ShouldStartJump())
+                WallJump();
             //if you are sliding, return
             //this keeps the player at a steady downward slide without being affected by anything else
              Slide();
              return;
         }
-           
-            
         
         //beginning a jump functionality
         //if Fire1 is pressed during this frame and the player has jumps left
@@ -138,6 +139,13 @@ public class Player : MonoBehaviour
         }
     }
 
+    void WallJump()
+    {
+        //the player is pushed in the opposite direction of the horizontal away from the wall
+        //the y velocity is changed by jump velocity and a multiplier so that the player goes up and out
+        _rigidbody2D.velocity = new Vector2(-_horizontal * _jumpVelocity, _jumpVelocity * 1.5f);
+    }
+
     void Slide()
     {
         _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, -_wallSlideSpeed);
@@ -148,6 +156,10 @@ public class Player : MonoBehaviour
     {
         //if player is on the ground, return false
         if (_isGrounded)
+            return false; 
+        
+        //if the player is going in the upwards direction due to a jump, dont slide, return false
+        if (_rigidbody2D.velocity.y > 0)
             return false; 
         
         //if player is going to the left
@@ -225,8 +237,13 @@ public class Player : MonoBehaviour
 
     void MoveHorizontal()
     {
+        //this method will return a floating point value that is a certain percentage from one value to another
+        //Time.delta time with give us the percentage
+        //the range of values is from the current velocity in the x direction to the horizontal value based on input
+        float newHorizontal = Mathf.Lerp(_rigidbody2D.velocity.x, _horizontal * _speed, Time.deltaTime); 
+        
         //sets the velocity of the player in the x direction only
-            _rigidbody2D.velocity = new Vector2(_horizontal * _speed, _rigidbody2D.velocity.y);
+            _rigidbody2D.velocity = new Vector2(newHorizontal, _rigidbody2D.velocity.y);
 
             //this line prints a message in the console
             //the dollar sign allows the inclusion of a variable inside the quotes and the variable is put inside the brackets
