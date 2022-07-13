@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class HittableFromBelow : MonoBehaviour
+public abstract class HittableFromBelow : MonoBehaviour
 {
     //the protected keyword denotes a generally private field but is accessible by the entities that inherit from this class
     [SerializeField] protected Sprite _usedSprite;
@@ -61,9 +61,8 @@ public class HittableFromBelow : MonoBehaviour
     }
 
     //this is a method that children will override so the protected keyword is used for children accessibility
-    //the virtual keyword allows for the override
-    protected virtual void Use()
-    {
-        Debug.Log($"Used {gameObject.name}");
-    }
+    //the virtual keyword allowed for the override
+    //the abstract keyword means that the sub class must use this method
+    protected abstract void Use();
+
 }

@@ -199,6 +199,11 @@ MonoBehaviour:
   _downPull: 0.1
   _maxJumpDuration: 0.1
   _downForce: 0
+  _wallSlideSpeed: 1
+  _acceleration: 1
+  _braking: 1
+  _airAcceleration: 1
+  _airBraking: 1
 --- !u!95 &5535326804151793970
 Animator:
   serializedVersion: 4

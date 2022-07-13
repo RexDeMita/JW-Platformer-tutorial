@@ -28,7 +28,11 @@ public class Player : MonoBehaviour
     [SerializeField] float _maxJumpDuration = 0.1f;
     [SerializeField] float _downForce;
     [SerializeField] float _wallSlideSpeed = 1f;
-    
+    [SerializeField] float _acceleration = 1;
+    [SerializeField] float _braking = 1;
+    [SerializeField] float _airAcceleration = 1;
+    [SerializeField] float _airBraking = 1;
+
     Vector3 _startPosition;
     int _jumpsRemaining;
     float _fallTimer;
@@ -237,10 +241,20 @@ public class Player : MonoBehaviour
 
     void MoveHorizontal()
     {
+        //if horizontal is equal to zero, player will decelerate. otherwise, accelerate
+        float smoothnessMultiplier = _horizontal == 0 ? _braking : _acceleration; 
+        
+        //if player is in the air, use air deceleration and acceleration
+        if(_isGrounded == false)
+            smoothnessMultiplier = _horizontal == 0 ? _airBraking : _airAcceleration;
+        
         //this method will return a floating point value that is a certain percentage from one value to another
         //Time.delta time with give us the percentage
         //the range of values is from the current velocity in the x direction to the horizontal value based on input
-        float newHorizontal = Mathf.Lerp(_rigidbody2D.velocity.x, _horizontal * _speed, Time.deltaTime); 
+        //the smoothness multiplier allows for more control over how fast the interpolation is from our current velocity to the new one
+        float newHorizontal = Mathf.Lerp(_rigidbody2D.velocity.x, 
+            _horizontal * _speed, 
+            Time.deltaTime * smoothnessMultiplier); 
         
         //sets the velocity of the player in the x direction only
             _rigidbody2D.velocity = new Vector2(newHorizontal, _rigidbody2D.velocity.y);
