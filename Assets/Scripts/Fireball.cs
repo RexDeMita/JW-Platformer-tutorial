@@ -18,8 +18,21 @@ public class Fireball : MonoBehaviour
         _rigidbody.velocity = new Vector2(_launchForce * Direction, _bounceForce); 
     } 
 
-    private void OnCollisionEnter2D(Collision2D other)
-    {
+    void OnCollisionEnter2D(Collision2D collision)
+    { 
+        //getting a reference of the object that uses the ITakeDamage interface 
+        ITakeDamage damageable = collision.collider.GetComponent<ITakeDamage>();
+        if (damageable != null)
+        {
+            //the object will take damage in their way
+            damageable.TakeDamage(); 
+            
+            //the object will be destroyed
+            Destroy(gameObject);
+            
+            return;
+        }
+        
         //decrement bounces remaining when the fireball collides with anything
         _bouncesRemaining--;
         

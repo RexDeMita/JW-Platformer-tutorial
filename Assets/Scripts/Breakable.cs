@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Breakable : MonoBehaviour
+public class Breakable : MonoBehaviour, ITakeDamage
 {
     void OnCollisionEnter2D(Collision2D collision)
     {
@@ -27,5 +27,10 @@ public class Breakable : MonoBehaviour
         //disable the parent collider and sprite renderer
         GetComponent<Collider2D>().enabled = false;
         GetComponent<SpriteRenderer>().enabled = false;
+    }
+
+    public void TakeDamage()
+    {
+        TakeHit();
     }
 }

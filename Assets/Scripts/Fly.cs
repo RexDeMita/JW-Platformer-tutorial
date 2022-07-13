@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Fly : MonoBehaviour
+public class Fly : MonoBehaviour, ITakeDamage
 {
     Vector2 _startPosition;
     [SerializeField] Vector2 _direction = Vector2.up;
@@ -37,6 +37,14 @@ public class Fly : MonoBehaviour
             _direction *= -1; 
         }
     }
+
+    public void TakeDamage()
+    {
+        gameObject.SetActive(false);
+    }
+    
+    
+    
     //End key goes to the end of the line
     //shift + home selects the entire line if the cursor is at the end of the line
     //shift delete deletes the entire line

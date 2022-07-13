@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Slime : MonoBehaviour
+public class Slime : MonoBehaviour, ITakeDamage
 {
     [SerializeField] Transform _leftSensor;
     [SerializeField] Transform _rightSensor;
@@ -90,8 +90,7 @@ public class Slime : MonoBehaviour
         //if the y value of the normal vector is less than -0.5, then this object dies
         //if not, the player resets
         if (normal.y <= -0.5)
-            //this line is necessary for coroutines to work
-            StartCoroutine(Die()); 
+            TakeDamage(); 
         else
         {
             //if player is not null, reset the player to the starting position
@@ -141,5 +140,12 @@ public class Slime : MonoBehaviour
         }
         
         
+    }
+    
+    //this is a method called by other objects that want the slime to take damage
+    public void TakeDamage()
+    {
+        //this line is necessary for coroutines to work
+        StartCoroutine(Die());
     }
 }
