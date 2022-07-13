@@ -14682,6 +14682,17 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &1969015198 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 209526898764786093, guid: 8eac27a3006087a4e8be09f3efd8df5c, type: 3}
+  m_PrefabInstance: {fileID: 317483634497618940}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4659250ac0eee24baab9076ed15fa03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1974938901
 GameObject:
   m_ObjectHideFlags: 0
@@ -15672,10 +15683,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2085062711815897434, guid: 685625cbf20bb8045b01bf20e91a04ad, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2085062711815897435, guid: 685625cbf20bb8045b01bf20e91a04ad, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -15986,25 +15993,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c908ffedafc22646b5ce2a320666020, type: 3}
---- !u!1 &4874819115239034654 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4874819115542945865, guid: 5c908ffedafc22646b5ce2a320666020, type: 3}
-  m_PrefabInstance: {fileID: 4874819115239034653}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &4874819115239034655
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4874819115239034654}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae311d5ea698e5c4fb3143c49beca5ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _fireballPrefab: {fileID: 209526898764786093, guid: 8eac27a3006087a4e8be09f3efd8df5c, type: 3}
-  _fireRate: 0.25
 --- !u!1001 &5054276175814433110
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16130,6 +16118,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1187283883991126190, guid: f2c5f728c6662aa4988df707e5cccc09, type: 3}
+      propertyPath: _fireballPrefab
+      value: 
+      objectReference: {fileID: 1969015198}
     - target: {fileID: 5535326804151793968, guid: f2c5f728c6662aa4988df707e5cccc09, type: 3}
       propertyPath: m_Name
       value: Player 2
