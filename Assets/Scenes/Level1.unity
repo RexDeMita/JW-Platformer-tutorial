@@ -15672,6 +15672,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2085062711815897434, guid: 685625cbf20bb8045b01bf20e91a04ad, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2085062711815897435, guid: 685625cbf20bb8045b01bf20e91a04ad, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -16000,6 +16004,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _fireballPrefab: {fileID: 209526898764786093, guid: 8eac27a3006087a4e8be09f3efd8df5c, type: 3}
+  _fireRate: 0.25
 --- !u!1001 &5054276175814433110
 PrefabInstance:
   m_ObjectHideFlags: 0

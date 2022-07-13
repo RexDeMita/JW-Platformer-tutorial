@@ -37,6 +37,7 @@ public class FireballLauncher : MonoBehaviour
         //if the fireButton input was held during this frame and Time.time is greater than the delay we give between each shot
         if (Input.GetButtonDown(_fireButton) && Time.time >= _nextFireTime)
         {
+            Debug.Log("next fire time = " + _nextFireTime);
             //reference to the horizontal input
             var horizontal = Input.GetAxis(_horizontalAxis);
             
@@ -47,7 +48,7 @@ public class FireballLauncher : MonoBehaviour
             fireball.Direction = horizontal >= 0 ? 1f : -1f; 
             
             //this will allow for some time in between shots
-            _nextFireTime += Time.time + _fireRate; 
+            _nextFireTime = Time.time + _fireRate; 
 
         }
         
