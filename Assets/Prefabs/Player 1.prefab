@@ -189,9 +189,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerNumber: 1
-  _speed: 5.79
+  _speed: 3
   _slipFactor: 0
-  _jumpVelocity: 3
+  _jumpVelocity: 5
   _maxJumps: 2
   _feet: {fileID: 4874819115031409190}
   _leftSensor: {fileID: 5755529648796984334}
@@ -200,9 +200,9 @@ MonoBehaviour:
   _maxJumpDuration: 0.1
   _downForce: 0
   _wallSlideSpeed: 1
-  _acceleration: 1
-  _braking: 1
-  _airAcceleration: 1
+  _acceleration: 2
+  _braking: 2
+  _airAcceleration: 1.5
   _airBraking: 1
 --- !u!95 &4874819115542945863
 Animator:
