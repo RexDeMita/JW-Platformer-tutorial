@@ -23,7 +23,7 @@ public class Slime : MonoBehaviour, ITakeDamage
     void Update()
     {
         //the velocity is still -1 except now the y velocity is not overwritten as 0 every frame 
-        _rigidbody2D.velocity = new Vector2(_direction, _rigidbody2D.velocity.y); 
+        _rigidbody2D.velocity = new Vector2(_direction * 3, _rigidbody2D.velocity.y); 
         
         //if the direction is less than zero, pass the left sensor into the Scan sensor method
         if(_direction < 0)
