@@ -60,6 +60,7 @@ public class Slime : MonoBehaviour, ITakeDamage
     void TurnAround()
     {
         _direction *= -1;
+        Debug.Log(_direction);
         
         //getting a reference to the sprite renderer component and assigning it to the variable spriteRenderer
         var spriteRenderer = GetComponent<SpriteRenderer>();
