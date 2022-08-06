@@ -18,10 +18,10 @@ public class AddCameraTarget : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetButtonDown("Fire1"))
+        if(Input.GetButtonDown("camera toggle"))
             _targetGroup.AddMember(_flagTransform, 1, 1); 
         
-        if (Input.GetButtonDown("P2Fire"))
+        if (Input.GetButtonDown("camera toggle off"))
             _targetGroup.RemoveMember(_flagTransform);
     }
 }

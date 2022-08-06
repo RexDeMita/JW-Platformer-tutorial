@@ -1,12 +1,10 @@
-  using System;
-  using System.Collections;
 using System.Collections.Generic;
   using System.Linq;
   using TMPro;
   using UnityEngine;
   using UnityEngine.Events;
 
-  public class Collector : MonoBehaviour
+public class Collector : MonoBehaviour
   {
   //this class should keep track of what is being collected and what to do after all the collectibles have been collected
   //this is an array of collectibles
@@ -73,6 +71,7 @@ using System.Collections.Generic;
     
     
     //to show a visual relationship between the selected collectors and the collectibles within their arrays
+    /*
     void OnDrawGizmos()
     {
       //this loop will attach lines from this collector to each collectible in the array of collectibles
@@ -91,4 +90,5 @@ using System.Collections.Generic;
       }
        
     }
+    */
   }
