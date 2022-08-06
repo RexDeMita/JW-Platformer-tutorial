@@ -618,7 +618,7 @@ InputManager:
     descriptiveName: camera toggle
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: left ctrl
+    positiveButton: left alt
     altNegativeButton: 
     altPositiveButton: 
     gravity: 3
