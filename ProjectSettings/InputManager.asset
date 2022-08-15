@@ -538,7 +538,7 @@ InputManager:
     descriptiveName: Player 1 Jump
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: left ctrl
+    positiveButton: 
     altNegativeButton: 
     altPositiveButton: 
     gravity: 3
@@ -618,7 +618,7 @@ InputManager:
     descriptiveName: camera toggle
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: left alt
+    positiveButton: q
     altNegativeButton: 
     altPositiveButton: 
     gravity: 3
