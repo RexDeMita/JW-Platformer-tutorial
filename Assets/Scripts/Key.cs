@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Key : MonoBehaviour
 {
-    [SerializeField] KeyLock _keylock;
+   [SerializeField] KeyLock _keylock;
     AudioSource _audioSource;
 
     void Awake() => _audioSource = GetComponent<AudioSource>();

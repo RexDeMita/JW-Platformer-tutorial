@@ -489,8 +489,8 @@ InputManager:
     m_Name: P1Horizontal
     descriptiveName: Player 1 Horizontal
     descriptiveNegativeName: 
-    negativeButton: a
-    positiveButton: d
+    negativeButton: z
+    positiveButton: c
     altNegativeButton: 
     altPositiveButton: 
     gravity: 3
@@ -600,6 +600,38 @@ InputManager:
   - serializedVersion: 3
     m_Name: P2Fire
     descriptiveName: Player 2 Fire
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: /
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 3
+    dead: 0.001
+    sensitivity: 3
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 0
+  - serializedVersion: 3
+    m_Name: camera toggle
+    descriptiveName: camera toggle
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: left alt
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 3
+    dead: 0.001
+    sensitivity: 3
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 0
+  - serializedVersion: 3
+    m_Name: camera toggle off
+    descriptiveName: camera toggle off
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: /
