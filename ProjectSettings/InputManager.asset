@@ -522,7 +522,7 @@ InputManager:
     descriptiveName: Player 1 Jump
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: left ctrl
+    positiveButton: backspace
     altNegativeButton: 
     altPositiveButton: 
     gravity: 3
