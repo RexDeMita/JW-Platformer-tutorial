@@ -8,11 +8,11 @@ public class AddCameraTarget : MonoBehaviour
 {
     public CinemachineTargetGroup _targetGroup;
     public Flag flag;
-    public Checkpoint _lastCheckpoint;
+  //  public Checkpoint _lastCheckpoint;
     
-    Transform _lasCheckpointTransform;
+   // Transform _lasCheckpointTransform;
     Transform _flagTransform;
-    Checkpoint[] _checkpoints;
+   // Checkpoint[] _checkpoints;
     
 
     void Awake()
@@ -22,11 +22,11 @@ public class AddCameraTarget : MonoBehaviour
 
     void Start()
     {
-        var checkPointManager = FindObjectOfType<CheckpointManager>();
-                _checkpoints = GetComponentsInChildren<Checkpoint>();
-                _lastCheckpoint = checkPointManager.GetLastCheckpointThatWasPassed();
+       // var checkPointManager = FindObjectOfType<CheckpointManager>();
+              //  _checkpoints = GetComponentsInChildren<Checkpoint>();
+               // _lastCheckpoint = checkPointManager.GetLastCheckpointThatWasPassed();
                 _flagTransform = flag.transform;
-               _lasCheckpointTransform = _lastCheckpoint.transform;
+              // _lasCheckpointTransform = _lastCheckpoint.transform;
     }
 
     void Update()
@@ -35,7 +35,7 @@ public class AddCameraTarget : MonoBehaviour
         {
            // Debug.Log(_lastCheckpoint);
              _targetGroup.AddMember(_flagTransform, 1, 0.1f);
-             _targetGroup.AddMember(_lasCheckpointTransform, 1f, 0.1f); 
+             //_targetGroup.AddMember(_lasCheckpointTransform, 1f, 0.1f); 
              
         }
 
@@ -44,7 +44,7 @@ public class AddCameraTarget : MonoBehaviour
         if (Input.GetButtonDown("camera toggle off"))
         {
              _targetGroup.RemoveMember(_flagTransform);
-             _targetGroup.RemoveMember(_lasCheckpointTransform);
+             //_targetGroup.RemoveMember(_lasCheckpointTransform);
             
         }
            

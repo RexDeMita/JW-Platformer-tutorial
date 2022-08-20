@@ -11,7 +11,9 @@ public class KillOnEnter : MonoBehaviour
         //if the player is found, reset the position of the player
         if (player != null)
         {
-            player.ResetToStart();
+            //player.ResetToStart();
+            var sendPlayerToCheckPoint = FindObjectOfType<SendPlayerToCheckpoint>();
+            sendPlayerToCheckPoint.SendPlayerToLastCheckPoint(); 
         }
     }
 
@@ -25,7 +27,9 @@ public class KillOnEnter : MonoBehaviour
         //if the player is found, reset the position of the player
         if (player != null)
         {
-            player.ResetToStart();
+            //player.ResetToStart();
+            var sendPlayerToCheckPoint = FindObjectOfType<SendPlayerToCheckpoint>();
+            sendPlayerToCheckPoint.SendPlayerToLastCheckPoint();
         }
     }
 
@@ -37,7 +41,9 @@ public class KillOnEnter : MonoBehaviour
         //if the player is found, reset the position of the player
         if (player != null)
         {
-            player.ResetToStart();
+            //player.ResetToStart();
+            var sendPlayerToCheckPoint = FindObjectOfType<SendPlayerToCheckpoint>();
+            sendPlayerToCheckPoint.SendPlayerToLastCheckPoint();
         }
     }
 }

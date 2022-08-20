@@ -94,7 +94,10 @@ public class Slime : MonoBehaviour, ITakeDamage
         else
         {
             //if player is not null, reset the player to the starting position
-            player.ResetToStart();
+            //player.ResetToStart();
+            
+            var sendPlayerToCheckPoint = FindObjectOfType<SendPlayerToCheckpoint>();
+            sendPlayerToCheckPoint.SendPlayerToLastCheckPoint();
         }
     }
     //the return type for a method with a co routine is the IEnumerator

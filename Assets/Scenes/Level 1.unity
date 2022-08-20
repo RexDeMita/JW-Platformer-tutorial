@@ -10910,6 +10910,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1719017191}
+  - component: {fileID: 1719017192}
   m_Layer: 0
   m_Name: SendPlayerToCheckpoint
   m_TagString: Untagged
@@ -10932,6 +10933,18 @@ Transform:
   m_Father: {fileID: 290667669}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1719017192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1719017190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cf68cb75b7eca2488244fe6f896892b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1720395772 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2085062711815897435, guid: 685625cbf20bb8045b01bf20e91a04ad, type: 3}
@@ -11575,7 +11588,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _targetGroup: {fileID: 1320980998}
   flag: {fileID: 1605449690}
-  _lastCheckpoint: {fileID: 1400705756}
 --- !u!4 &1842245006 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2085062711815897435, guid: 685625cbf20bb8045b01bf20e91a04ad, type: 3}
@@ -13300,11 +13312,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2396549639673844726, guid: 6c0cc16d95002004aba17ff440d0580a, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 3.1554436e-30
       objectReference: {fileID: 0}
     - target: {fileID: 2396549639673844726, guid: 6c0cc16d95002004aba17ff440d0580a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 1e-45
       objectReference: {fileID: 0}
     - target: {fileID: 2396549640321734257, guid: 6c0cc16d95002004aba17ff440d0580a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13372,11 +13384,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2396549640914914215, guid: 6c0cc16d95002004aba17ff440d0580a, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 3.1554436e-30
       objectReference: {fileID: 0}
     - target: {fileID: 2396549640914914215, guid: 6c0cc16d95002004aba17ff440d0580a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 1e-45
       objectReference: {fileID: 0}
     - target: {fileID: 6294001731845586629, guid: 6c0cc16d95002004aba17ff440d0580a, type: 3}
       propertyPath: m_RootOrder

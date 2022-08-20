@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SendPlayerToCheckpoint : MonoBehaviour
 {
-    void SendPlayerToLastCheckPoint()
+    public void SendPlayerToLastCheckPoint()
     {
         //make sure there is a default checkpoint for the level so that the player does not have to collide with a checkpoint for this to work
 
