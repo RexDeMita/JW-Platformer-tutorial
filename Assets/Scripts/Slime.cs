@@ -10,7 +10,7 @@ public class Slime : MonoBehaviour, ITakeDamage
     [SerializeField] Sprite _deadSprite;
     Rigidbody2D _rigidbody2D;
     float _direction = -1;
-    
+    public SendPlayerToCheckpoint SendPlayerToCheckpoint; 
 
     // Start is called before the first frame update
     void Start()
@@ -60,8 +60,7 @@ public class Slime : MonoBehaviour, ITakeDamage
     void TurnAround()
     {
         _direction *= -1;
-        Debug.Log(_direction);
-        
+
         //getting a reference to the sprite renderer component and assigning it to the variable spriteRenderer
         var spriteRenderer = GetComponent<SpriteRenderer>();
         
