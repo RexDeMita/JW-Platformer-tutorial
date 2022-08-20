@@ -7568,7 +7568,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+<<<<<<< HEAD
+  m_text: "Controls: \n\nMove left: z\nMove right: c\nJump: Left Ctrl\nMap overview:
+=======
   m_text: "Controls: \n\nMove left: z\nMove right: c\nJump: Backspace\nMap overview:
+>>>>>>> 024c736b6adff93aeda86663b7777af76db0cc8f
     q\nreturn to player view: /"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
