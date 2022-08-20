@@ -16,7 +16,9 @@ public class CheckpointManager : MonoBehaviour
 
     public Checkpoint GetLastCheckpointThatWasPassed()
     {
+       Debug.Log("we have entered the method that returns the last checkpoint");
+        
         //linq statement 
-        return _checkpoints.Last(t => t.Passed); 
+        return _checkpoints.Last(t => t.Passed);
     }
 }

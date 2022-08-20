@@ -10,32 +10,36 @@ public class AddCameraTarget : MonoBehaviour
     public Flag flag;
   //  public Checkpoint _lastCheckpoint;
     
-   // Transform _lasCheckpointTransform;
+    public Transform _lastCheckpointTransform;
     Transform _flagTransform;
    // Checkpoint[] _checkpoints;
-    
 
-    void Awake()
+   void Start()
     {
-        
+        _flagTransform = flag.transform;
     }
 
-    void Start()
+    void GetCheckpointTransform()
     {
-       // var checkPointManager = FindObjectOfType<CheckpointManager>();
-              //  _checkpoints = GetComponentsInChildren<Checkpoint>();
-               // _lastCheckpoint = checkPointManager.GetLastCheckpointThatWasPassed();
-                _flagTransform = flag.transform;
-              // _lasCheckpointTransform = _lastCheckpoint.transform;
+        //find and set a local variable with the checkpoint manager
+        var checkpointManager = FindObjectOfType<CheckpointManager>();
+                
+        //have the checkpoint manager get the last checkpoint passed
+        var checkpoint = checkpointManager.GetLastCheckpointThatWasPassed();
+        
+        Debug.Log("we have exited the method above");
+        
+         _lastCheckpointTransform = checkpoint.transform;
     }
 
     void Update()
     {
         if (Input.GetButtonDown("camera toggle"))
         {
-           // Debug.Log(_lastCheckpoint);
+            // Debug.Log(_lastCheckpoint);
+             GetCheckpointTransform();
              _targetGroup.AddMember(_flagTransform, 1, 0.1f);
-             //_targetGroup.AddMember(_lasCheckpointTransform, 1f, 0.1f); 
+             _targetGroup.AddMember(_lastCheckpointTransform, 1f, 0.1f); 
              
         }
 
@@ -44,7 +48,7 @@ public class AddCameraTarget : MonoBehaviour
         if (Input.GetButtonDown("camera toggle off"))
         {
              _targetGroup.RemoveMember(_flagTransform);
-             //_targetGroup.RemoveMember(_lasCheckpointTransform);
+             _targetGroup.RemoveMember(_lastCheckpointTransform);
             
         }
            
