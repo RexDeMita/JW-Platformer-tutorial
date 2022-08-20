@@ -22,7 +22,7 @@ public class Coin : MonoBehaviour
         CoinsCollected++;
         
         //print the value of coins collected to the log
-        Debug.Log(CoinsCollected);
+        //Debug.Log(CoinsCollected);
         
         //add 100 to the score
         ScoreSystem.Add(100);
